@@ -46,6 +46,7 @@
     <Compile Include="DataServer.cs" />
     <Compile Include="DataSource.cs" />
     <Compile Include="DataSourceLegacy.cs" />
+    <Compile Include="ILegacyService.cs" />
     <Compile Include="LegacyService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

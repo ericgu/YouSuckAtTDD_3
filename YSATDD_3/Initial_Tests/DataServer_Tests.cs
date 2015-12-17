@@ -10,7 +10,7 @@ namespace Initial_Tests
         [TestMethod]
         public void when_I_call_CreateDataSource_with_a_null_data_source__it_throws_an_exception()
         {
-            DataServer dataServer = new DataServer();
+            DataServer dataServer = new DataServer(null);
 
             try
             {
@@ -27,7 +27,8 @@ namespace Initial_Tests
         [TestMethod]
         public void when_I_call_CreateDataSource_with_a_valid_data_source__it_calls_the_legacy_server_with_proper_data()
         {
-            DataServer dataServer = new DataServer();
+            ILegacyService legacyService = new LegacyServiceMock();
+            DataServer dataServer = new DataServer(legacyService);
 
             DataSource dataSource = new DataSource
             {

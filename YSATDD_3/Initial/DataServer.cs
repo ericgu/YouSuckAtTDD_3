@@ -7,7 +7,14 @@ namespace Initial
 {
     public class DataServer
     {
-        public void CreateDataSource(DataSource dataSource)
+        private ILegacyService _legacyService;
+
+        public DataServer(ILegacyService legacyService)
+        {
+            _legacyService = legacyService;
+        }
+
+        public void CreateDataSource( DataSource dataSource)
         {
             if (dataSource == null)
             {
@@ -27,18 +34,15 @@ namespace Initial
                 throw new NullReferenceException();
             }
 
-            using (LegacyService legacyService = new LegacyService("http:/service.example/com/datasource"))
+            DataSourceLegacy dataSourceLegacy = new DataSourceLegacy
             {
-                DataSourceLegacy dataSourceLegacy = new DataSourceLegacy
-                {
-                    ServerName = dataSource.ServerName,
-                    Username = dataSource.Username,
-                    Password = dataSource.Password,
-                    CatalogName = "Legacy" + dataSource.CatalogName
-                };
+                ServerName = dataSource.ServerName,
+                Username = dataSource.Username,
+                Password = dataSource.Password,
+                CatalogName = "Legacy" + dataSource.CatalogName
+            };
 
-                legacyService.DataSourceCreate(dataSourceLegacy);
-            }
+            _legacyService.DataSourceCreate(dataSourceLegacy);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Initial
 {
-    public class LegacyService: IDisposable
+    public class LegacyService: ILegacyService
     {
         public LegacyService(string serviceUrl)
         {

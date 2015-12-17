@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DataServer_Tests.cs" />
+    <Compile Include="LegacyServiceMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
