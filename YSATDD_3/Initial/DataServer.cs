@@ -21,18 +21,7 @@ namespace Initial
                 throw new ArgumentNullException();
             }
 
-            if (string.IsNullOrEmpty(dataSource.CatalogName) ||
-                string.IsNullOrEmpty(dataSource.ServerName) ||
-                dataSource.Username == null)
-            {
-                throw new NullReferenceException();
-            }
-
-            if (dataSource.Username != String.Empty &&
-                string.IsNullOrEmpty(dataSource.Password))
-            {
-                throw new NullReferenceException();
-            }
+            dataSource.Validate();
 
             DataSourceLegacy dataSourceLegacy = new DataSourceLegacy
             {
