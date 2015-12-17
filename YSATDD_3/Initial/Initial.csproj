@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DataServer.cs" />
     <Compile Include="DataSource.cs" />
+    <Compile Include="DataSourceCopyer.cs" />
     <Compile Include="DataSourceLegacy.cs" />
     <Compile Include="ILegacyService.cs" />
     <Compile Include="LegacyService.cs" />

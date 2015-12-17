@@ -21,13 +21,7 @@ namespace Initial
                 throw new ArgumentNullException();
             }
 
-            DataSourceLegacy dataSourceLegacy = new DataSourceLegacy
-            {
-                ServerName = dataSource.ServerName,
-                Username = dataSource.Username,
-                Password = dataSource.Password,
-                CatalogName = "Legacy" + dataSource.CatalogName
-            };
+            var dataSourceLegacy = DataSourceCopyer.CopyDataSourceToDataSourceLegacy(dataSource);
 
             _legacyService.DataSourceCreate(dataSourceLegacy);
         }
