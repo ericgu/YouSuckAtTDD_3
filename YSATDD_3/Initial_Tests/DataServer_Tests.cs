@@ -27,19 +27,18 @@ namespace Initial_Tests
         [TestMethod]
         public void when_I_call_CreateDataSource_with_a_valid_data_source__it_calls_the_legacy_server_with_proper_data()
         {
-            ILegacyService legacyService = new LegacyServiceMock();
+            LegacyServiceMock legacyService = new LegacyServiceMock();
             DataServer dataServer = new DataServer(legacyService);
 
-            DataSource dataSource = new DataSource
-            {
-                CatalogName = "Fred",
-                ServerName = "http://example.com",
-                Username = "Mister Slate",
-                Password = "Rock on"
-            };
+            DataSource dataSource = new DataSource(
+                "http://example.com",
+                "Fred",
+                "Mister Slate",
+                "Rock on"
+            );
             dataServer.CreateDataSource(dataSource);
 
-            // Assert.???
+            Assert.AreEqual("Fred", legacyService.DataSourceLegacy.Username);
             // I don't know how to check this...
         }
     }

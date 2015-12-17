@@ -21,8 +21,6 @@ namespace Initial
                 throw new ArgumentNullException();
             }
 
-            dataSource.Validate();
-
             DataSourceLegacy dataSourceLegacy = new DataSourceLegacy
             {
                 ServerName = dataSource.ServerName,

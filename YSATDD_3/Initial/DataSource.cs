@@ -7,12 +7,22 @@ namespace Initial
 {
     public class DataSource
     {
-        public string ServerName { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string CatalogName { get; set; }
+        public string ServerName { get; private set; }
+        public string Username { get; private set; }
+        public string Password { get; private set; }
+        public string CatalogName { get; private set; }
 
-        public void Validate()
+        public DataSource(string serverName, string username, string password, string catalogName)
+        {
+            ServerName = serverName;
+            Username = username;
+            Password = password;
+            CatalogName = catalogName;
+
+            Validate();
+        }
+
+        void Validate()
         {
             if (String.IsNullOrEmpty(CatalogName) ||
                 String.IsNullOrEmpty(ServerName) ||
