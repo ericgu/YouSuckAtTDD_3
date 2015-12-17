@@ -5,7 +5,7 @@ using Initial;
 namespace Initial_Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class DataServer_Tests
     {
         [TestMethod]
         public void when_I_call_CreateDataSource_with_a_null_data_source__it_throws_an_exception()
