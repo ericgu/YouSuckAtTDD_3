@@ -16,11 +16,6 @@ namespace Initial
 
         public void CreateDataSource( DataSource dataSource)
         {
-            if (dataSource == null)
-            {
-                throw new ArgumentNullException();
-            }
-
             var dataSourceLegacy = DataSourceCopyer.CopyDataSourceToDataSourceLegacy(dataSource);
 
             _legacyService.DataSourceCreate(dataSourceLegacy);

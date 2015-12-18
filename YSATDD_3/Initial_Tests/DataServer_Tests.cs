@@ -16,7 +16,7 @@ namespace Initial_Tests
             {
                 dataServer.CreateDataSource(null);
             }
-            catch (ArgumentNullException)
+            catch (NullReferenceException)
             {
                 return;
             }
